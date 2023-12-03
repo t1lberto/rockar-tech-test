@@ -15,6 +15,14 @@ cd into the project and install the version of Node required for this project wi
 You might have to do ```asdf install nodejs lts-hydrogen``` but who knows ¯\_(ツ)_/¯
 I should probably check that before handing this over
 
-To install all dependencies for the project, run
+To install all dependencies for the project run
 
 ```npm install```
+
+## Getting started
+Run 
+
+## Testing
+To run tests on this project run:
+
+```npm test```
