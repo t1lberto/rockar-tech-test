@@ -5,6 +5,7 @@ import { root } from "./resolvers";
 
 const server = express();
 
+
 // setup graphql
 server.use(
   "/graphql",

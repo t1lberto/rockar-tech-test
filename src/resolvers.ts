@@ -1,5 +1,7 @@
-import getCustomers from "./resolvers/customersService";
+import getCustomers from "./resolvers/customersResolver";
+import getProducts from "./resolvers/productsResolver";
 
 export const root = {
-  getCustomers
+  getCustomers,
+  getProducts
 }; 

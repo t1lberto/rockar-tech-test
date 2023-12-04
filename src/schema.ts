@@ -9,17 +9,6 @@ const schema = buildSchema(`
     postcode: String
   }
 
-  type Query {
-    getCustomers: [Customer]
-  }
-`);
-
-export default schema;
-
-
-//    getProduct: [Product]
-
-/*
   type Product {
     vin: String
     colour: String
@@ -27,4 +16,12 @@ export default schema;
     model: String
     price: Int
   }
-  */
+
+  type Query {
+    getCustomers: [Customer]
+    getProducts: [Product]
+  }
+
+`);
+
+export default schema;

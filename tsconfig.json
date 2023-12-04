@@ -11,6 +11,6 @@
     "skipLibCheck": true,
     "outDir": "./dist"
   },
-  "include": ["src"],
+  "include": ["src", "src/db/dbConfig.ts"],
   "exclude": ["node_modules"]
 }
