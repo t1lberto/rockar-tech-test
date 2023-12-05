@@ -1,6 +1,7 @@
 import db from "./dbConfig";
 
-export const getUsers = (): Promise<any> => {
+// Fetches ALL Customer data from the database 
+export const getCustomers = (): Promise<any> => {
   return new Promise((resolve, reject) => {
     db.query("SELECT * FROM customers", (error: any, result: any) => {
       if (error) {
@@ -12,6 +13,7 @@ export const getUsers = (): Promise<any> => {
   });
 };
 
+// Fetches ALL Product data from the database 
 export const getProducts = (): Promise<any> => {
   return new Promise((resolve, reject) => {
     db.query("SELECT * FROM products", (error: any, result: any) => {

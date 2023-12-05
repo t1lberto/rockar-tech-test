@@ -1,6 +1,6 @@
 /*
 
-This is used in services/CustomersService.ts
+Product Class
 
 Don't forget to update the schema if you are altering this class
 

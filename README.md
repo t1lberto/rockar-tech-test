@@ -15,20 +15,22 @@ Please ensure you have [asdf](https://asdf-vm.com/) installed on your machine.
 
 You can then install the [nodeJS plugin](https://github.com/asdf-vm/asdf-nodejs) for asdf:
 
-``asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git``
+
+    asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
 
 cd into the project and install the version of Node required for this project with:
 
-``asdf install``
 
-You might have to do ```asdf install nodejs lts-hydrogen``` but who knows ¯\_(ツ)_/¯
-I should probably check that before handing this over
+    asdf install
+
 
 ### Installing dependencies
 
 To install all dependencies for the project run
 
-``npm install``
+    npm install
+
 
 ### Creating a database
 
@@ -36,9 +38,8 @@ It's possible to manage versions of postgres with asdf, but honestly it can be a
 
 Ensure you have postgres installed on your machine, using homebrew is a good option if you don't already.
 
-``psql postgres``
+    psql postgres
 
-``
     CREATE DATABASE rockar_test;
 
     \c rockar_test
@@ -68,11 +69,45 @@ Ensure you have postgres installed on your machine, using homebrew is a good opt
     FROM '/Users/youruser/rockar-tech-test/src/data/customer.csv' #replace this to your path
     DELIMITER ','
     CSV HEADER;
-``
+
 
 ## Getting started
 
-``cp .env.example .env``
+Copy the .env.example file:
+
+
+    cp .env.example .env
+
+
+The default env variables should be enough to get this project running, but do check them out incase you have a password set for local postgres.
+
+To start the server, run:
+
+
+    npm run dev
+
+
+Once the server is up and running, navigate to http://localhost:3000/graphql, and you will be able to fetch product and customer data using these graphQl queries: 
+
+
+    query {
+        getCustomers {
+            email
+            forename
+            surname
+            contactNumber
+            postcode
+        }
+        getProducts {
+            vin
+            colour
+            make
+            model
+            price
+        }
+    }
+
+
 
 ## Testing
 
@@ -80,4 +115,11 @@ Tests are on this project are managed with [Jest](https://jestjs.io/).
 
 To run tests on this project run:
 
-``npm test``
+    npm test
+
+
+## @to-do
+
+1. Create model and make classes
+2. Write additional tests for ensure graphQL is returning the correct data for product/customer
+3. fix ``npm run start``

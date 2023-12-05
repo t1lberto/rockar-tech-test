@@ -1,10 +1,9 @@
-// src/services/productsService.ts
-
 require('dotenv').config();
 import readCSVData from '../data/readCSVData';
 import Product from '../models/Product';
 import { getProducts } from '../db/dbQueries';
 
+// optionally fetches the relevant data from either CSV or the database
 export class ProductsService {
   static async getProducts(): Promise<Product[]> {
     let data;
