@@ -8,8 +8,7 @@ import { getUsers } from '../db/dbQueries';
 export class CustomersService {
   static async getCustomers(): Promise<Customer[]> {
     let data;
-
-    if (process.env.USE_CSV_DATA) {
+    if (process.env.USE_CSV_DATA === "true") {
       data = await readCSVData('src/data/customer.csv');
     } else {
       try {
